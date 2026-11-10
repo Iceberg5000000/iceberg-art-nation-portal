@@ -1,0 +1,26 @@
+<!-- Emerald Waterfall Paradise - The Flow of Abundance Artwork Card -->
+<div class="bg-iceCard border border-iceCardBorder rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:border-goldAccent" itemscope itemtype="https://schema.org/VisualArtwork">
+    <img src="images/emerald-falls.jpg" 
+         alt="Emerald Waterfall Paradise - The Flow of Abundance - Original Fine Art Acrylic Painting by Timothy Stephen Nenji, Iceberg Art Nation" 
+         title="Emerald Waterfall Paradise - The Flow of Abundance"
+         class="w-full h-72 object-cover"
+         loading="lazy">
+    <div class="p-6">
+        <span class="text-xs font-semibold text-goldAccent uppercase tracking-widest">Original Masterpiece</span>
+        <h3 class="text-2xl font-serif text-white mt-1 mb-2" itemprop="name">Emerald Waterfall Paradise - The Flow of Abundance</h3>
+        <p class="text-gray-300 text-sm mb-4" itemprop="description">
+            An original acrylic canvas masterpiece capturing a lush, vibrant waterfall nestled within serene green mountain valleys and tranquil azure waters, symbolizing prosperity and natural harmony.
+        </p>
+        <div class="flex flex-col gap-2 text-xs text-gray-400 mb-6 border-t border-iceCardBorder pt-4">
+            <div><strong class="text-gray-200">Medium:</strong> Acrylic on Stretched Canvas</div>
+            <div><strong class="text-gray-200">Creator:</strong> <span itemprop="creator" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Timothy Stephen Nenji</span></span> (<span itemprop="brand">Iceberg Art Nation</span>)</div>
+            <div><strong class="text-gray-200">Availability:</strong> Original Available for Acquisition</div>
+        </div>
+        <a href="https://wa.me/2348063159218?text=Hello%2C%20I%20am%20interested%20in%20acquiring%20the%20original%20painting%20'Emerald%20Waterfall%20Paradise%20-%20The%20Flow%20of%20Abundance'." 
+           target="_blank" 
+           rel="noopener"
+           class="w-full block text-center bg-goldAccent hover:bg-goldHover text-gray-950 font-semibold py-3 px-4 rounded-lg transition shadow-lg">
+           Inquire / Acquire via WhatsApp
+        </a>
+    </div>
+</div>
