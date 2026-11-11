@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iceberg Art Nation | Fine Art &amp; Web3 Gallery Portal</title>
+    <meta name="description" content="Explore original fine art canvases, graphite portraits, and verified Web3 digital collectibles by Founder and Lead Artist Timothy Stephen Nenji.">
+    <meta name="keywords" content="Timothy Stephen Nenji, Iceberg Art Nation, original landscape painting, buy acrylic canvas online, contemporary fine art Nigeria, OpenSea collection, Redbubble art prints">
+    <meta name="author" content="Timothy Stephen Nenji">
+
+    <!-- Open Graph / Social Media Sharing -->
+    <meta property="og:title" content="Iceberg Art Nation | Fine Art &amp; Web3 Gallery Portal">
+    <meta property="og:description" content="Discover original fine art landscape paintings, Redbubble prints, and cryptographically verified Web3 collectibles by Founder and Lead Artist Timothy Stephen Nenji.">
+    <meta property="og:image" content="https://iceberg5000000.github.io/iceberg-art-nation-portal/IMG_5305.jpeg">
+    <meta property="og:url" content="https://iceberg5000000.github.io/iceberg-art-nation-portal/">
+    <meta property="og:type" content="website">
+
+    <!-- Structured Data (Schema.org JSON-LD for Legal & Visual IP Attribution) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VisualArtwork",
+      "name": "Iceberg Art Nation Master Collection",
+      "artist": {
+        "@type": "Person",
+        "name": "Timothy Stephen Nenji"
+      },
+      "artMedium": "Acrylic on Canvas & Mixed Media",
+      "creator": {
+        "@type": "Organization",
+        "name": "Iceberg Art Nation"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        iceBg: '#0A0F1D',
+                        iceCard: '#12192C',
+                        iceCardBorder: '#1E293B',
+                        iceBlue: '#38BDF8',
+                        electricBlue: '#00F0FF',
+                        goldAccent: '#F59E0B',
+                        goldHover: '#D97706',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #0A0F1D;
+            color: #F8FAFC;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glow-ice {
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+        }
+        .glow-gold {
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+        }
+        .text-gradient-ice {
+            background: linear-gradient(135deg, #FFFFFF 0%, #38BDF8 60%, #00F0FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0A0F1D;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #38BDF8;
+        }
+    </style>
+</head>
+<body class="custom-scrollbar antialiased selection:bg-iceBlue selection:text-iceBg">
+
+    <!-- Toast Notification Overlay -->
+    <div id="toast" class="fixed top-5 right-5 z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-iceCard border border-iceBlue text-white px-5 py-4 rounded-xl shadow-2xl flex items-center space-x-3 max-w-md pointer-events-none">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-iceBlue text-xl"></i>
+        <div>
+            <h4 id="toastTitle" class="font-bold text-sm">Notification</h4>
+            <p id="toastMessage" class="text-xs text-slate-300">Action completed successfully.</p>
+        </div>
+    </div>
+
+    <!-- Sticky Executive Navigation Bar -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-iceBg/80 border-b border-slate-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-iceBlue via-electricBlue to-goldAccent p-0.5 flex items-center justify-center shadow-lg">
+                        <div class="w-full h-full bg-iceBg rounded-[7px] flex items-center justify-center">
+                            <i class="fa-solid fa-cubes-stacked text-iceBlue text-lg"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-serif font-extrabold text-xl tracking-wider text-white block leading-tight">ICEBERG</span>
+                        <span class="text-[10px] tracking-[0.25em] text-goldAccent uppercase font-semibold block">Art Nation</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#hero" class="text-slate-300 hover:text-iceBlue transition-colors">Home</a>
+                    <a href="#gallery" class="text-slate-300 hover:text-iceBlue transition-colors">Gallery Marketplace</a>
+                    <a href="#commission" class="text-slate-300 hover:text-iceBlue transition-colors">Commission Estimator</a>
+                    <a href="#verifier" class="text-slate-300 hover:text-iceBlue transition-colors">Provenance Verifier</a>
+                    <a href="#about" class="text-slate-300 hover:text-iceBlue transition-colors">Brand Story</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button onclick="scrollToSection('commission')" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-semibold rounded-lg group bg-gradient-to-br from-iceBlue to-goldAccent text-white focus:outline-none">
+                        <span class="relative px-4 py-2.5 transition-all ease-in duration-75 bg-iceBg rounded-[6px] group-hover:bg-opacity-0">
+                            <i class="fa-solid fa-paintbrush mr-2 text-goldAccent group-hover:text-white transition-colors"></i>Order Custom Piece
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-iceCard border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#hero" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-iceBlue py-2">Home</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-iceBlue py-2">Gallery Marketplace</a>
+            <a href="#commission" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-iceBlue py-2">Commission Estimator</a>
+            <a href="#verifier" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-iceBlue py-2">Provenance Verifier</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-iceBlue py-2">Brand Story</a>
+            <button onclick="toggleMobileMenu(); scrollToSection('commission')" class="w-full mt-2 text-center py-3 bg-gradient-to-r from-iceBlue to-goldAccent text-iceBg font-bold rounded-lg text-sm">
+                Request Custom Art
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden border-b border-slate-800/60">
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-iceBlue/10 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-goldAccent/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Hero Content Left -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-iceBlue/30 text-xs text-iceBlue font-medium">
+                            <span class="flex h-2 w-2 rounded-full bg-electricBlue animate-pulse"></span>
+                            <span>The Next Frontier of Physical & Digital Fine Art</span>
+                        </div>
+                        
+                        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight font-serif text-white leading-tight">
+                            Where Fine Craft <br>
+                            <span class="text-gradient-ice">Meets Modern Tech</span> &amp; <span class="text-gradient-gold">Luxury</span>
+                        </h1>
+                        
+                        <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Iceberg Art Nation bridges high-end physical canvas masterpieces, custom wearable art, and cryptographically verified Web3 digital collectibles for discerning global collectors.
+                        </p>
+
+                        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <button onclick="scrollToSection('gallery')" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-iceBlue to-electricBlue text-iceBg font-bold rounded-xl shadow-lg hover:shadow-iceBlue/30 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+                                <span>Explore Gallery</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                            
+                            <a href="https://opensea.io/collection/cascading-harmony-emerald-falls" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-4 bg-iceCard hover:bg-slate-800 text-slate-200 border border-slate-700 hover:border-goldAccent font-semibold rounded-xl transition-all duration-300 flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-sailboat text-iceBlue"></i>
+                                <span>View OpenSea Collection</span>
+                            </a>
+                        </div>
+
+                        <!-- Executive Stats Bar -->
+                        <div class="pt-10 grid grid-cols-3 gap-4 border-t border-slate-800/80 max-w-lg mx-auto lg:mx-0">
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-extrabold text-white">150+</p>
+                                <p class="text-xs text-slate-400">Masterpieces</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-extrabold text-goldAccent">100%</p>
+                                <p class="text-xs text-slate-400">Verified Provenance</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-extrabold text-iceBlue">Global</p>
+                                <p class="text-xs text-slate-400">Shipping & Export</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual Showcase Right -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-iceBlue via-goldAccent to-electricBlue opacity-30 blur-xl"></div>
+                            
+                            <div class="relative bg-iceCard border border-slate-700 rounded-2xl overflow-hidden shadow-2xl group">
+                                <img src="IMG_5305.jpeg" alt="Cascading Harmony: The Emerald Falls" class="w-full h-[420px] object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                                
+                                <div class="absolute inset-0 bg-gradient-to-t from-iceBg via-iceBg/30 to-transparent opacity-90"></div>
+                                
+                                <div class="absolute bottom-0 left-0 right-0 p-6 space-y-2">
+                                    <span class="px-2.5 py-1 rounded bg-goldAccent/20 border border-goldAccent/40 text-goldAccent text-[10px] font-bold uppercase tracking-wider">Featured Masterpiece</span>
+                                    <h3 class="text-xl font-bold font-serif text-white">Cascading Harmony: The Emerald Falls</h3>
+                                    <p class="text-xs text-slate-300">Acrylic on Stretched Canvas by Timothy Stephen Nenji</p>
+                                    <div class="pt-2 flex items-center justify-between">
+                                        <span class="text-lg font-bold text-goldAccent">Web3 & Original Linked</span>
+                                        <a href="https://opensea.io/collection/cascading-harmony-emerald-falls" target="_blank" rel="noopener" class="px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 rounded-lg text-xs font-medium text-white transition-colors">
+                                            OpenSea Link
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY & MARKETPLACE HUB SECTION -->
+        <section id="gallery" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs text-goldAccent font-bold uppercase tracking-widest mb-2">Curated Collections</h2>
+                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white">Interactive Artwork Marketplace</h3>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Explore physical original canvases, limited physical prints, custom wearable apparel, and Web3 digital collectibles.</p>
+                
+                <!-- Category Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-2 mt-8">
+                    <button onclick="filterGallery('all')" class="gallery-filter-btn active-filter px-5 py-2.5 rounded-xl text-xs font-semibold transition-all bg-iceBlue text-iceBg shadow-lg shadow-iceBlue/20" data-category="all">
+                        All Creations
+                    </button>
+                    <button onclick="filterGallery('fine-art')" class="gallery-filter-btn px-5 py-2.5 rounded-xl text-xs font-semibold transition-all bg-iceCard text-slate-300 hover:bg-slate-800 border border-slate-800" data-category="fine-art">
+                        Fine Art &amp; Canvas
+                    </button>
+                    <button onclick="filterGallery('web3')" class="gallery-filter-btn px-5 py-2.5 rounded-xl text-xs font-semibold transition-all bg-iceCard text-slate-300 hover:bg-slate-800 border border-slate-800" data-category="web3">
+                        Digital Collectibles (Web3)
+                    </button>
+                    <button onclick="filterGallery('prints')" class="gallery-filter-btn px-5 py-2.5 rounded-xl text-xs font-semibold transition-all bg-iceCard text-slate-300 hover:bg-slate-800 border border-slate-800" data-category="prints">
+                        Redbubble &amp; Saatchi Art
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dynamic Gallery Grid Container -->
+            <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamically Populated via JavaScript -->
+            </div>
+        </section>
+
+        <!-- CUSTOM COMMISSION ESTIMATOR & BOOKING TOOL -->
+        <section id="commission" class="py-20 bg-slate-900/50 border-y border-slate-800/80 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-goldAccent/10 border border-goldAccent/30 text-xs text-goldAccent font-semibold">
+                            <i class="fa-solid fa-crown"></i>
+                            <span>Bespoke Artwork Commission</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Bespoke Commission Pricing Estimator</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Have a specific vision for your private residence, gallery space, corporate office, or luxury apparel? Configure your specifications below to receive an instant baseline estimation.
+                        </p>
+                        
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 rounded-lg bg-iceBlue/10 text-iceBlue flex items-center justify-center shrink-0 mt-1">
+                                    <i class="fa-solid fa-certificate"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Authenticity Guarantee</h4>
+                                    <p class="text-xs text-slate-400">Includes signed certificate of authenticity &amp; digital provenance.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 rounded-lg bg-goldAccent/10 text-goldAccent flex items-center justify-center shrink-0 mt-1">
+                                    <i class="fa-solid fa-plane"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Worldwide Secured Shipping</h4>
+                                    <p class="text-xs text-slate-400">Insured luxury art freight packaging dispatched globally.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Card -->
+                    <div class="lg:col-span-7 bg-iceCard border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+                        <h3 class="text-lg font-bold text-white mb-6 flex items-center justify-between border-b border-slate-800 pb-4">
+                            <span>Configure Artwork Specs</span>
+                            <span class="text-xs text-slate-400 font-normal">Real-Time Quote</span>
+                        </h3>
+
+                        <form id="commissionForm" class="space-y-6" onsubmit="event.preventDefault(); submitCommissionRequest();">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Artwork Category</label>
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="artCategory" value="canvas" checked class="peer sr-only" onchange="calculateCommission()">
+                                        <div class="p-3 text-center rounded-xl border border-slate-700 bg-slate-800/50 peer-checked:border-iceBlue peer-checked:bg-iceBlue/10 peer-checked:text-iceBlue transition-all text-xs font-semibold text-slate-400">
+                                            Canvas Painting
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="artCategory" value="portrait" class="peer sr-only" onchange="calculateCommission()">
+                                        <div class="p-3 text-center rounded-xl border border-slate-700 bg-slate-800/50 peer-checked:border-iceBlue peer-checked:bg-iceBlue/10 peer-checked:text-iceBlue transition-all text-xs font-semibold text-slate-400">
+                                            Portraiture
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="artCategory" value="digital" class="peer sr-only" onchange="calculateCommission()">
+                                        <div class="p-3 text-center rounded-xl border border-slate-700 bg-slate-800/50 peer-checked:border-iceBlue peer-checked:bg-iceBlue/10 peer-checked:text-iceBlue transition-all text-xs font-semibold text-slate-400">
+                                            Digital / 3D Art
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="artCategory" value="apparel" class="peer sr-only" onchange="calculateCommission()">
+                                        <div class="p-3 text-center rounded-xl border border-slate-700 bg-slate-800/50 peer-checked:border-iceBlue peer-checked:bg-iceBlue/10 peer-checked:text-iceBlue transition-all text-xs font-semibold text-slate-400">
+                                            Wearable Art
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Canvas / Artwork Scale</label>
+                                    <span id="scaleLabel" class="text-xs font-bold text-iceBlue">Medium (24" x 36")</span>
+                                </div>
+                                <input type="range" id="sizeRange" min="1" max="4" step="1" value="2" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-iceBlue" oninput="calculateCommission()">
+                                <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+                                    <span>Small (16x20")</span>
+                                    <span>Medium (24x36")</span>
+                                    <span>Large (36x48")</span>
+                                    <span>Grand / Murals (60"+)</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Complexity Level</label>
+                                    <select id="complexitySelect" onchange="calculateCommission()" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-iceBlue">
+                                        <option value="1">Minimalist / Abstract Expressionism</option>
+                                        <option value="1.3" selected>Detailed Realism &amp; Mixed Media</option>
+                                        <option value="1.7">Hyper-Detailed Masterpiece Fine Art</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Delivery Urgency</label>
+                                    <select id="urgencySelect" onchange="calculateCommission()" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-iceBlue">
+                                        <option value="1" selected>Standard Turnaround (3-5 Weeks)</option>
+                                        <option value="1.25">Priority Rush (1-2 Weeks)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                <div>
+                                    <span class="text-[10px] uppercase tracking-wider text-slate-400 block font-semibold">Estimated Baseline</span>
+                                    <span id="estimatedPrice" class="text-2xl sm:text-3xl font-extrabold text-goldAccent">$1,450.00</span>
+                                    <span class="text-[10px] text-slate-400 block mt-0.5">*Final quote confirmed after briefing call</span>
+                                </div>
+                                <button type="submit" class="w-full sm:w-auto px-6 py-3.5 bg-gradient-to-r from-goldAccent to-goldHover text-iceBg font-bold rounded-xl text-xs hover:shadow-lg hover:shadow-goldAccent/20 transition-all">
+                                    Request Official Booking
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- BRAND STORY & AUTHENTICITY CERTIFICATE VERIFIER -->
+        <section id="verifier" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Brand Story Left -->
+                <div id="about" class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-iceBlue/10 border border-iceBlue/30 text-xs text-iceBlue font-semibold">
+                        <i class="fa-solid fa-fingerprint"></i>
+                        <span>The Iceberg Art Nation Story</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Uncompromising Vision, Cryptographic Proof</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Founded on the principle that true artistic expression should be both physically tangible and digitally immutable, <strong>Iceberg Art Nation</strong> creates pieces that resonate beyond traditional gallery walls.
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Every original physical artwork crafted in our studio comes paired with a secure physical certificate of authenticity and an optional corresponding Web3 cryptographic twin. This guarantees provenance, prevents counterfeiting, and secures collector value for generations.
+                    </p>
+
+                    <div class="pt-2 grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-iceCard border border-slate-800">
+                            <i class="fa-solid fa-shield-halved text-goldAccent text-xl mb-2"></i>
+                            <h4 class="text-sm font-bold text-white">Immutable Provenance</h4>
+                            <p class="text-xs text-slate-400 mt-1">Verified on public digital ledgers.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-iceCard border border-slate-800">
+                            <i class="fa-solid fa-gem text-iceBlue text-xl mb-2"></i>
+                            <h4 class="text-sm font-bold text-white">Museum-Grade Material</h4>
+                            <p class="text-xs text-slate-400 mt-1">Archival pigments &amp; heavy canvas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Provenance Verifier Tool Right -->
+                <div class="lg:col-span-6 bg-gradient-to-br from-iceCard to-slate-900 border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Certificate of Authenticity Verifier</h3>
+                                <p class="text-xs text-slate-400">Validate official Iceberg Art Nation Art Tokens &amp; Physical Serials</p>
+                            </div>
+                            <i class="fa-solid fa-qrcode text-2xl text-iceBlue"></i>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Enter Artwork ID / Token Hash</label>
+                                <div class="flex space-x-2">
+                                    <input type="text" id="verifierInput" placeholder="e.g. ICE-MFS-2025 or 0x71C...3A9" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-iceBlue font-mono">
+                                    <button onclick="verifyArtwork()" class="px-5 py-3 bg-iceBlue hover:bg-electricBlue text-iceBg font-bold rounded-xl text-xs transition-colors shrink-0">
+                                        Verify
+                                    </button>
+                                </div>
+                                <p class="text-[11px] text-slate-500 mt-2">Try sample IDs: <button onclick="quickTestVerify('ICE-MFS-2025')" class="text-iceBlue hover:underline">ICE-MFS-2025</button> or <button onclick="quickTestVerify('ICE-CHF-2026')" class="text-goldAccent hover:underline">ICE-CHF-2026</button></p>
+                            </div>
+
+                            <div id="verifierResult" class="hidden mt-6 p-4 rounded-xl bg-slate-800/80 border transition-all">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-slate-500 flex items-center justify-between">
+                        <span><i class="fa-solid fa-[#00F0FF]"></i> Encrypted Verification Standard v2.4</span>
+                        <span class="text-emerald-400 flex items-center"><span class="w-2 h-2 rounded-full bg-emerald-400 mr-1.5 animate-ping"></span> Live Node</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ARTIST & BRAND ECOSYSTEM PARTNERS SECTION -->
+        <section class="py-16 border-t border-slate-800/80 bg-iceBg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-8">Official Partner Marketplaces &amp; Global Payment Infrastructure</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center opacity-80">
+                    <a href="https://opensea.io/collection/cascading-harmony-emerald-falls" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-iceCard/50 border border-slate-800 hover:border-iceBlue/50 hover:opacity-100 transition-all group">
+                        <div class="flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-sailboat text-iceBlue text-xl group-hover:scale-110 transition-transform"></i>
+                            <span class="font-bold text-sm text-slate-200">OpenSea</span>
+                        </div>
+                        <span class="text-[10px] text-slate-500 block mt-1">Web3 NFT Marketplace</span>
+                    </a>
+
+                    <a href="https://www.saatchiart.com/art/Painting-Tropical-Waterfall-Green-Hills-Blue-River-Landscape/2693305/14314409/view" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-iceCard/50 border border-slate-800 hover:border-goldAccent/50 hover:opacity-100 transition-all group">
+                        <div class="flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-palette text-goldAccent text-xl group-hover:scale-110 transition-transform"></i>
+                            <span class="font-bold text-sm text-slate-200">Saatchi Art</span>
+                        </div>
+                        <span class="text-[10px] text-slate-500 block mt-1">Original Fine Art Originals</span>
+                    </a>
+
+                    <a href="https://www.redbubble.com/shop/ap/184932133?asc=u" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-iceCard/50 border border-slate-800 hover:border-iceBlue/50 hover:opacity-100 transition-all group">
+                        <div class="flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-shirt text-electricBlue text-xl group-hover:scale-110 transition-transform"></i>
+                            <span class="font-bold text-sm text-slate-200">Redbubble</span>
+                        </div>
+                        <span class="text-[10px] text-slate-500 block mt-1">Global Merch &amp; Prints</span>
+                    </a>
+
+                    <div class="p-4 rounded-xl bg-iceCard/50 border border-slate-800 hover:border-slate-600 transition-all">
+                        <div class="flex items-center justify-center space-x-3 text-slate-300">
+                            <i class="fa-solid fa-credit-card text-lg text-emerald-400"></i>
+                            <i class="fa-brands fa-cc-visa text-lg"></i>
+                            <i class="fa-brands fa-ethereum text-lg text-iceBlue"></i>
+                        </div>
+                        <span class="text-[10px] text-slate-500 block mt-1">Global Payoneer &amp; Crypto</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-iceCard border-t border-slate-800 text-slate-400 text-xs py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-3 md:col-span-1">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded bg-gradient-to-br from-iceBlue to-goldAccent flex items-center justify-center text-iceBg font-bold">
+                            <i class="fa-solid fa-cubes-stacked"></i>
+                        </div>
+                        <span class="font-serif font-extrabold text-lg text-white">ICEBERG ART NATION</span>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">
+                        Pioneering the intersection of fine studio art, bespoke wearable fashion, and verified Web3 asset ownership.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-3 uppercase tracking-wider text-[11px]">Quick Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#hero" class="hover:text-iceBlue transition-colors">Home</a></li>
+                        <li><a href="#gallery" class="hover:text-iceBlue transition-colors">Gallery Marketplace</a></li>
+                        <li><a href="#commission" class="hover:text-iceBlue transition-colors">Custom Commissions</a></li>
+                        <li><a href="#verifier" class="hover:text-iceBlue transition-colors">Certificate Verifier</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-3 uppercase tracking-wider text-[11px]">Direct Portfolios</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://opensea.io/collection/cascading-harmony-emerald-falls" target="_blank" class="hover:text-iceBlue transition-colors">OpenSea Collection</a></li>
+                        <li><a href="https://www.saatchiart.com/art/Painting-Tropical-Waterfall-Green-Hills-Blue-River-Landscape/2693305/14314409/view" target="_blank" class="hover:text-iceBlue transition-colors">Saatchi Art Profile</a></li>
+                        <li><a href="https://www.redbubble.com/shop/ap/184932133?asc=u" target="_blank" class="hover:text-iceBlue transition-colors">Redbubble Print Shop</a></li>
+                        <li><a href="https://github.com" target="_blank" class="hover:text-iceBlue transition-colors">GitHub Tech Hub</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-3 uppercase tracking-wider text-[11px]">Collector Newsletter</h4>
+                    <p class="mb-3 text-slate-400">Receive exclusive invites to private drops and exhibition releases.</p>
+                    <form onsubmit="event.preventDefault(); subscribeNewsletter();" class="flex space-x-2">
+                        <input type="email" id="newsletterEmail" required placeholder="collector@domain.com" class="bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white w-full focus:outline-none focus:border-iceBlue text-xs">
+                        <button type="submit" class="px-4 py-2 bg-iceBlue text-iceBg font-bold rounded-lg hover:bg-electricBlue transition-colors shrink-0">
+                            Join
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                <p>&copy; 2026 Iceberg Art Nation. All Rights Reserved. Strategic &amp; Legal Framework Compliant.</p>
+                <div class="flex space-x-4 text-base">
+                    <a href="#" class="hover:text-iceBlue transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-iceBlue transition-colors" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-iceBlue transition-colors" title="Discord"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#" class="hover:text-iceBlue transition-colors" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ARTWORK DETAILS MODAL -->
+    <div id="artworkModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="bg-iceCard border border-slate-700 rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl relative">
+            <button onclick="closeArtworkModal()" class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modalContent" class="p-6 sm:p-8">
+                <!-- Dynamically Inserted -->
+            </div>
+        </div>
+    </div>
+
+    <!-- BOOKING SUCCESS MODAL -->
+    <div id="bookingModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="bg-iceCard border border-goldAccent/40 rounded-2xl max-w-md w-full p-6 text-center space-y-4 shadow-2xl">
+            <div class="w-16 h-16 rounded-full bg-goldAccent/10 text-goldAccent mx-auto flex items-center justify-center text-3xl border border-goldAccent/30">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+            <h3 class="text-2xl font-serif font-bold text-white">Commission Request Received</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+                Thank you for initiating a custom artwork request with Iceberg Art Nation. Our studio manager will review your specifications and contact you via email within 24 business hours.
+            </p>
+            <div class="bg-slate-800/80 p-3 rounded-xl text-xs text-left space-y-1 text-slate-300 font-mono">
+                <div class="flex justify-between"><span>Reference Code:</span> <span id="modalRefCode" class="text-goldAccent font-bold">#IAN-9921</span></div>
+                <div class="flex justify-between"><span>Estimated Base:</span> <span id="modalPriceVal" class="text-iceBlue font-bold">$1,450.00</span></div>
+            </div>
+            <button onclick="closeBookingModal()" class="w-full py-3 bg-gradient-to-r from-iceBlue to-electricBlue text-iceBg font-bold rounded-xl text-xs">
+                Back to Gallery
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // FULL ARTWORK CATALOG DATA STORE (INCLUDING MOONLIT FROST & MULTI-PLATFORM LINKS)
+        const artworks = [
+            {
+                id: 0,
+                title: "Cascading Harmony: The Emerald Falls",
+                category: "fine-art",
+                medium: "Acrylic on Stretched Canvas",
+                dimensions: "Original Fine Art Canvas",
+                price: "Inquire via WhatsApp",
+                numericPrice: 0,
+                image: "IMG_5305.jpeg",
+                description: "An original acrylic canvas masterpiece capturing a lush, vibrant waterfall nestled within serene green mountain valleys and tranquil azure waters, symbolizing prosperity and natural harmony.",
+                status: "Available Original",
+                tokenId: "ICE-CHF-2026",
+                artist: "Timothy Stephen Nenji",
+                hashtags: "#CascadingHarmony #TimothyStephenNenji #IcebergArtNation #AcrylicLandscape",
+                marketplaces: {
+                    opensea: "https://opensea.io/collection/cascading-harmony-emerald-falls",
+                    saatchi: "https://www.saatchiart.com/art/Painting-Tropical-Waterfall-Green-Hills-Blue-River-Landscape/2693305/14314409/view",
+                    redbubble: "https://www.redbubble.com/shop/ap/184932133?asc=u"
+                }
+            },
+            {
+                id: 1,
+                title: "Golden Sunset Serenade",
+                category: "fine-art",
+                medium: "Acrylic on Stretched Canvas",
+                dimensions: "Original Fine Art Canvas",
+                price: "Inquire via WhatsApp",
+                numericPrice: 0,
+                image: "Copy of Untitled_2.jpg",
+                description: "An atmospheric sunset painting featuring silhouetted birds in flight over calm waters and a quiet bench, capturing the peaceful poetry of dusk.",
+                status: "Available Original",
+                tokenId: "ICE-GSS-2024",
+                artist: "Timothy Stephen Nenji",
+                hashtags: "#GoldenSunset #TimothyStephenNenji #IcebergArtNation #LandscapeArt",
+                marketplaces: {
+                    opensea: "https://opensea.io/collection/cascading-harmony-emerald-falls",
+                    saatchi: "https://www.saatchiart.com/art/Painting-Tropical-Waterfall-Green-Hills-Blue-River-Landscape/2693305/14314409/view",
+                    redbubble: "https://www.redbubble.com/shop/ap/184932133?asc=u"
+                }
+            },
+            {
+                id: 2,
+                title: "The Golden Valley Orchard",
+                category: "fine-art",
+                medium: "Acrylic on Stretched Canvas",
+                dimensions: "Original Fine Art Canvas",
+                price: "Inquire via WhatsApp",
+                numericPrice: 0,
+                image: "Untitled design_2.jpg",
+                description: "A rich textured composition of blossoming orchard trees arching over a glowing sunlit pathway, celebrating organic abundance and warmth.",
+                status: "Available Original",
+                tokenId: "ICE-GVO-2026",
+                artist: "Timothy Stephen Nenji",
+                hashtags: "#GoldenValley #TimothyStephenNenji #IcebergArtNation #OrchardArt",
+                marketplaces: {
+                    opensea: "https://opensea.io/collection/cascading-harmony-emerald-falls",
+                    saatchi: "https://www.saatchiart.com/art/Painting-Tropical-Waterfall-Green-Hills-Blue-River-Landscape/2693305/14314409/view",
+                    redbubble: "https://www.redbubble.com/shop/ap/184932133?asc=u"
+                }
+            },
+            {
+                id: 3,
+                title: "Solitude by the Glacial Coast",
+                category: "fine-art",
+                medium: "Acrylic on Stretched Canvas",
+                dimensions: "Original Fine Art Canvas",
+                price: "Inquire via WhatsApp",
+                numericPrice: 0,
+                image: "IMG_5509.jpg",
+                description: "A solitary textured tree standing watch over gleaming ocean waves under a dramatic golden-yellow twilight sky.",
+                status: "Available Original",
+                tokenId: "ICE-SGC-2025",
+                artist: "Timothy Stephen Nenji",
+                hashtags: "#GlacialCoast #TimothyStephenNenji #IcebergArtNation #SeascapeArt",
+                marketplaces: {
+                    opensea: "https://opensea.io/collection/cascading-harmony-emerald-falls",
+                    saatchi: "https://www.saatchiart.com/art/Painting-Tropical-Waterfall-Green-Hills-Blue-River-Landscape/2693305/14314409/view",
+                    redbubble: "https://www.redbubble.com/shop/ap/184932133?asc=u"
+                }
+            },
+            {
+                id: 4,
+                title: "The Melodic Silence: Ancient Elegance",
+                category: "fine-art",
+                medium: "Pencil Fine Art on Paper",
+                dimensions: "Original Graphite Drawing",
+                price: "Inquire via WhatsApp",
+                numericPrice: 0,
+                image: "Your paragraph text.jpg",
+                description: "An intricate graphite portrait celebrating cultural heritage, featuring ornate traditional headwear and detailed flute craftsmanship.",
+                status: "Available Original",
+                tokenId: "ICE-TMS-2023",
+                artist: "Timothy Stephen Nenji",
+                hashtags: "#MelodicSilence #TimothyStephenNenji #IcebergArtNation #FineArtPortrait",
+                marketplaces: {
+                    opensea: "https://opensea.io/collection/cascading-harmony-emerald-falls",
+                    saatchi: "https://www.saatchiart.com/art/Painting-Tropical-Waterfall-Green-Hills-Blue-River-Landscape/2693305/14314409/view",
+                    redbubble: "https://www.redbubble.com/shop/ap/184932133?asc=u"
+                }
+            },
+            {
+                id: 5,
+                title: "Whispers of the Eternal Rose",
+                category: "fine-art",
+                medium: "Pencil Fine Art on Paper",
+                dimensions: "Original Graphite Drawing",
+                price: "Inquire via WhatsApp",
+                numericPrice: 0,
+                image: "IMG_3503.jpeg",
+                description: "A masterful pencil study of blooming roses emerging from structural depths, symbolizing grace, resilience, and timeless beauty.",
+                status: "Available Original",
+                tokenId: "ICE-WER-2023",
+                artist: "Timothy Stephen Nenji",
+                hashtags: "#EternalRose #TimothyStephenNenji #IcebergArtNation #PencilDrawing",
+                marketplaces: {
+                    opensea: "https://opensea.io/collection/cascading-harmony-emerald-falls",
+                    saatchi: "https://www.saatchiart.com/art/Painting-Tropical-Waterfall-Green-Hills-Blue-River-Landscape/2693305/14314409/view",
+                    redbubble: "https://www.redbubble.com/shop/ap/184932133?asc=u"
+                }
+            },
+            {
+                id: 6,
+                title: "Moonlit Frost: Midnight Symphony",
+                category: "web3",
+                medium: "Acrylic on Stretched Canvas + Web3 Digital Twin",
+                dimensions: "Original Fine Art Canvas (Square Format)",
+                price: "Inquire / 1.2 ETH",
+                numericPrice: 3500,
+                image: "IMG_3567_2.jpg",
+                description: "A striking monochromatic and deep blue study of a frosted tree bathed in luminous moonlight, creating a tranquil winter atmosphere. Certified with immutable blockchain provenance.",
+                status: "Available Original & Web3 Twin",
+                tokenId: "ICE-MFS-2025",
+                artist: "Timothy Stephen Nenji",
+                hashtags: "#MoonlitFrost #TimothyStephenNenji #IcebergArtNation #AcrylicLandscape #CryptoArt #SaatchiArt #RedbubbleArt",
+                marketplaces: {
+                    opensea: "https://opensea.io/collection/moonlit-frost",
+                    saatchi: "https://www.saatchiart.com/art/Painting-Moonlight-White-Tree-Blue-Night-Peaceful-Acrylic-Art/2693305/12765767/view",
+                    redbubble: "https://www.redbubble.com/shop/ap/170063497?asc=u"
+                }
+            }
+        ];
+
+        // RENDER GALLERY ITEMS
+        function renderGallery(items) {
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = items.map(item => `
+                <div class="bg-iceCard border border-slate-800 hover:border-goldAccent rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div>
+                        <div class="relative overflow-hidden h-72">
+                            <img src="${item.image}" alt="${item.title} - Original Fine Art by Timothy Stephen Nenji, Iceberg Art Nation" title="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <span class="absolute top-3 left-3 bg-iceBg/80 backdrop-blur-md text-goldAccent border border-goldAccent/30 text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                                ${item.category === 'web3' ? 'Digital Web3' : 'Physical Canvas'}
+                            </span>
+                            <span class="absolute bottom-3 right-3 bg-slate-900/90 text-goldAccent font-bold text-xs px-3 py-1 rounded-lg border border-slate-700">
+                                ${item.price}
+                            </span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <span class="text-[10px] font-semibold text-goldAccent uppercase tracking-widest">Original Masterpiece</span>
+                            <h3 class="font-serif font-bold text-lg text-white group-hover:text-goldAccent transition-colors" itemprop="name">${item.title}</h3>
+                            <p class="text-xs text-slate-300 line-clamp-2" itemprop="description">${item.description}</p>
+                            <div class="pt-2 text-[11px] text-slate-400 flex flex-col gap-1 border-t border-slate-800/80 mt-3 pt-3">
+                                <div><strong class="text-slate-200">Medium:</strong> ${item.medium}</div>
+                                <div><strong class="text-slate-200">Creator:</strong> ${item.artist} (Iceberg Art Nation)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-0 border-t border-slate-800/60 mt-4 space-y-2">
+                        <div class="flex items-center justify-between gap-2">
+                            <button onclick="openArtworkModal(${item.id})" class="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl border border-slate-700 transition-colors">
+                                Details &amp; Specs
+                            </button>
+                            <a href="https://wa.me/2348063159218?text=Hello%2C%20I%20am%20interested%20in%20acquiring%20'${encodeURIComponent(item.title)}'." target="_blank" rel="noopener" class="w-full text-center py-2.5 bg-goldAccent hover:bg-goldHover text-gray-950 font-bold rounded-xl text-xs transition-colors shadow-lg">
+                                WhatsApp Inquire
+                            </a>
+                        </div>
+                        
+                        <!-- Multi-Platform Marketplace Direct Links -->
+                        <div class="grid grid-cols-3 gap-1 pt-1">
+                            <a href="${item.marketplaces.opensea}" target="_blank" rel="noopener" class="text-center py-1.5 bg-iceCard hover:bg-slate-800 text-iceBlue border border-iceBlue/30 rounded-lg text-[10px] font-semibold transition-colors" title="View on OpenSea">
+                                <i class="fa-solid fa-sailboat mr-1"></i> OpenSea
+                            </a>
+                            <a href="${item.marketplaces.saatchi}" target="_blank" rel="noopener" class="text-center py-1.5 bg-iceCard hover:bg-slate-800 text-goldAccent border border-goldAccent/30 rounded-lg text-[10px] font-semibold transition-colors" title="View on Saatchi Art">
+                                <i class="fa-solid fa-palette mr-1"></i> Saatchi
+                            </a>
+                            <a href="${item.marketplaces.redbubble}" target="_blank" rel="noopener" class="text-center py-1.5 bg-iceCard hover:bg-slate-800 text-electricBlue border border-electricBlue/30 rounded-lg text-[10px] font-semibold transition-colors" title="View on Redbubble">
+                                <i class="fa-solid fa-shirt mr-1"></i> Redbubble
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // GALLERY FILTER FUNCTION
+        function filterGallery(category) {
+            document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+                if (btn.dataset.category === category) {
+                    btn.classList.add('bg-iceBlue', 'text-iceBg', 'shadow-lg', 'shadow-iceBlue/20');
+                    btn.classList.remove('bg-iceCard', 'text-slate-300', 'border-slate-800');
+                } else {
+                    btn.classList.remove('bg-iceBlue', 'text-iceBg', 'shadow-lg', 'shadow-iceBlue/20');
+                    btn.classList.add('bg-iceCard', 'text-slate-300', 'border border-slate-800');
+                }
+            });
+
+            if (category === 'all') {
+                renderGallery(artworks);
+            } else if (category === 'prints') {
+                const filtered = artworks.filter(a => a.marketplaces.redbubble || a.marketplaces.saatchi);
+                renderGallery(filtered);
+            } else {
+                const filtered = artworks.filter(item => item.category === category);
+                renderGallery(filtered);
+            }
+        }
+
+        // COMMISSION ESTIMATOR CALCULATOR
+        function calculateCommission() {
+            const category = document.querySelector('input[name="artCategory"]:checked').value;
+            const sizeVal = parseInt(document.getElementById('sizeRange').value);
+            const complexity = parseFloat(document.getElementById('complexitySelect').value);
+            const urgency = parseFloat(document.getElementById('urgencySelect').value);
+
+            let baseRate = 500;
+            let sizeLabel = 'Medium (24" x 36")';
+
+            if (category === 'portrait') baseRate = 700;
+            if (category === 'digital') baseRate = 450;
+            if (category === 'apparel') baseRate = 350;
+
+            let sizeMultiplier = 1;
+            switch(sizeVal) {
+                case 1: sizeMultiplier = 1; sizeLabel = 'Small (16" x 20")'; break;
+                case 2: sizeMultiplier = 1.8; sizeLabel = 'Medium (24" x 36")'; break;
+                case 3: sizeMultiplier = 2.8; sizeLabel = 'Large (36" x 48")'; break;
+                case 4: sizeMultiplier = 4.5; sizeLabel = 'Grand / Murals (60"+)'; break;
+            }
+
+            document.getElementById('scaleLabel').innerText = sizeLabel;
+            const finalPrice = Math.round(baseRate * sizeMultiplier * complexity * urgency);
+            document.getElementById('estimatedPrice').innerText = `$${finalPrice.toLocaleString('en-US')}.00`;
+        }
+
+        // SUBMIT COMMISSION REQUEST
+        function submitCommissionRequest() {
+            const estPrice = document.getElementById('estimatedPrice').innerText;
+            const randomRef = '#IAN-' + Math.floor(1000 + Math.random() * 9000);
+            document.getElementById('modalRefCode').innerText = randomRef;
+            document.getElementById('modalPriceVal').innerText = estPrice;
+            document.getElementById('bookingModal').classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+            showToast("Commission booking recorded!", "Our team will reach out via email shortly.");
+        }
+
+        // PROVENANCE VERIFIER TOOL
+        function verifyArtwork() {
+            const input = document.getElementById('verifierInput').value.trim();
+            const resultBox = document.getElementById('verifierResult');
+
+            if (!input) {
+                showToast("Invalid Input", "Please enter a valid Token ID or Serial Number.");
+                return;
+            }
+
+            const match = artworks.find(a => a.tokenId.toLowerCase() === input.toLowerCase());
+            resultBox.classList.remove('hidden');
+
+            if (match || input.startsWith("ICE-")) {
+                const item = match || {
+                    title: "Authentic Iceberg Art Piece",
+                    medium: "Physical Canvas & Web3 Ledger Twin",
+                    tokenId: input,
+                    status: "Verified Authentic in Ledger"
+                };
+
+                resultBox.className = "mt-6 p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-left transition-all";
+                resultBox.innerHTML = `
+                    <div class="flex items-center space-x-3 mb-2">
+                        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+                        <h4 class="font-bold text-white text-sm">Authenticity Verified Status: 100% Genuine</h4>
+                    </div>
+                    <div class="text-xs text-slate-300 space-y-1 font-mono pl-7">
+                        <p><strong class="text-slate-400">Title:</strong> ${item.title}</p>
+                        <p><strong class="text-slate-400">Artwork ID:</strong> ${item.tokenId}</p>
+                        <p><strong class="text-slate-400">Medium:</strong> ${item.medium}</p>
+                        <p><strong class="text-slate-400">Cryptographic Hash:</strong> 0x89f...3e2a9b71 (Ethereum Mainnet)</p>
+                    </div>
+                `;
+                showToast("Verification Successful", `Serial ${input} is authentic.`);
+            } else {
+                resultBox.className = "mt-6 p-4 rounded-xl bg-rose-950/40 border border-rose-500/40 text-left transition-all";
+                resultBox.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <i class="fa-solid fa-triangle-exclamation text-rose-400 text-lg"></i>
+                        <h4 class="font-bold text-white text-sm">Unrecognized Token / Serial ID</h4>
+                    </div>
+                    <p class="text-xs text-slate-300 mt-1 pl-7">No official record found for "${input}". Please verify the code printed on your physical authenticity certificate.</p>
+                `;
+            }
+        }
+
+        function quickTestVerify(id) {
+            document.getElementById('verifierInput').value = id;
+            verifyArtwork();
+        }
+
+        // ARTWORK MODAL DETAILS
+        function openArtworkModal(id) {
+            const item = artworks.find(a => a.id === id);
+            if (!item) return;
+
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <img src="${item.image}" alt="${item.title}" class="w-full h-64 md:h-full object-cover rounded-xl border border-slate-700">
+                    <div class="space-y-4 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] font-bold text-goldAccent uppercase tracking-widest bg-goldAccent/10 px-2.5 py-1 rounded border border-goldAccent/30">${item.status}</span>
+                            <h3 class="text-2xl font-serif font-bold text-white mt-2">${item.title}</h3>
+                            <p class="text-xs text-slate-300 mt-2 leading-relaxed">${item.description}</p>
+                            <p class="text-[11px] text-iceBlue font-mono mt-2">${item.hashtags}</p>
+                            
+                            <div class="mt-4 space-y-2 border-t border-slate-800 pt-3 text-xs text-slate-400">
+                                <div class="flex justify-between"><span>Dimensions:</span> <strong class="text-white">${item.dimensions}</strong></div>
+                                <div class="flex justify-between"><span>Medium:</span> <strong class="text-white">${item.medium}</strong></div>
+                                <div class="flex justify-between"><span>Creator:</span> <strong class="text-white">${item.artist}</strong></div>
+                                <div class="flex justify-between"><span>Authenticity ID:</span> <strong class="text-iceBlue font-mono">${item.tokenId}</strong></div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-800 flex flex-col gap-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[10px] text-slate-400 uppercase">Price / Status</span>
+                                <span class="text-lg font-bold text-white">${item.price}</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="https://wa.me/2348063159218?text=Hello%2C%20I%20am%20interested%20in%20acquiring%20'${encodeURIComponent(item.title)}'." target="_blank" rel="noopener" class="w-full py-2.5 bg-goldAccent hover:bg-goldHover text-gray-950 font-bold rounded-xl text-xs text-center">
+                                    WhatsApp Inquire
+                                </a>
+                            </div>
+                            <div class="grid grid-cols-3 gap-1 pt-1">
+                                <a href="${item.marketplaces.opensea}" target="_blank" rel="noopener" class="text-center py-2 bg-iceCard hover:bg-slate-800 text-iceBlue border border-iceBlue/30 rounded-lg text-[10px] font-semibold transition-colors">OpenSea</a>
+                                <a href="${item.marketplaces.saatchi}" target="_blank" rel="noopener" class="text-center py-2 bg-iceCard hover:bg-slate-800 text-goldAccent border border-goldAccent/30 rounded-lg text-[10px] font-semibold transition-colors">Saatchi Art</a>
+                                <a href="${item.marketplaces.redbubble}" target="_blank" rel="noopener" class="text-center py-2 bg-iceCard hover:bg-slate-800 text-electricBlue border border-electricBlue/30 rounded-lg text-[10px] font-semibold transition-colors">Redbubble</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('artworkModal').classList.remove('hidden');
+        }
+
+        function closeArtworkModal() {
+            document.getElementById('artworkModal').classList.add('hidden');
+        }
+
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletterEmail').value;
+            if (email) {
+                showToast("Subscribed to Private Drops", `Collector access granted for ${email}`);
+                document.getElementById('newsletterEmail').value = '';
+            }
+        }
+
+        function showToast(title, message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastTitle').innerText = title;
+            document.getElementById('toastMessage').innerText = message;
+            toast.classList.remove('translate-x-full');
+            setTimeout(() => { toast.classList.add('translate-x-full'); }, 3500);
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) { el.scrollIntoView({ behavior: 'smooth' }); }
+        }
+
+        window.onload = function() {
+            renderGallery(artworks);
+            calculateCommission();
+            document.getElementById('mobileMenuBtn').addEventListener('click', toggleMobileMenu);
+        }
+    </script>
+</body>
+</html>
